@@ -21,6 +21,7 @@
                             <th>Email</th>
                             <th>Oluşturulma Tarihi</th>
                             <th>Roller</th>
+                            <th>Detay</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -29,6 +30,7 @@
                             <th>Email</th>
                             <th>Oluşturulma Tarihi</th>
                             <th>Roller</th>
+                            <th>Detay</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -42,6 +44,7 @@
                                         {{$role->title}}
                                     @endforeach
                                 </td>
+                                <td><a href="{{route('admin.users.show', $user->id)}}" class="btn btn-primary">Detay</a></td>
                             </tr>
                         @endforeach
                         
