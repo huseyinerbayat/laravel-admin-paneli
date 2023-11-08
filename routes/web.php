@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\MemberController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
@@ -32,3 +33,7 @@ Route::post('/admin/register', [MemberController::class, 'register'])->name('adm
 Route::get('/admin/kullanicilar', [UserController::class, 'index'])->name('admin.users.index')->middleware('auth');
 Route::get('/admin/kullanicilar/{user}', [UserController::class, 'show'])->name('admin.users.show')->middleware('auth');
 Route::post('/admin/kullanicilar/{user}', [UserController::class, 'updatePermissions'])->name('admin.users.updatepermissions')->middleware('auth');
+
+Route::get('/admin/urunler', [ProductController::class, 'index'])->name('admin.products.index')->middleware('auth');
+Route::get('/admin/urunler/ekle', [ProductController::class, 'create'])->name('admin.products.create')->middleware('auth');
+Route::post('/admin/urunler/ekle', [ProductController::class, 'store'])->name('admin.products.store')->middleware('auth');

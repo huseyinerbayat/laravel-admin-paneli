@@ -68,7 +68,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">E-Ticaret Yönetimi</h6>
                         @can('urunleri-goruntuleyebilir')
-                            <a class="collapse-item" href="buttons.html">Ürünler</a>
+                            <a class="collapse-item" href="{{route('admin.products.index')}}">Ürünler</a>
                         @endcan
                         @can('siparisleri-goruntuleyebilir')
                             <a class="collapse-item" href="cards.html">Siparişler</a>
